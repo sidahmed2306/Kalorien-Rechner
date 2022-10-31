@@ -8,7 +8,12 @@ html {
 }
 
 section {
-  background: linear-gradient(#aec4dc, #91a3b8, #8799ad, #8799ad);
+  background: linear-gradient(
+    #aec4dc 20%,
+    #91a3b8 40%,
+    #8799ad 60%,
+    #8799ad 100%
+  );
   padding: 40px 30px 20px 20px;
   display: flex;
   flex-direction: column;

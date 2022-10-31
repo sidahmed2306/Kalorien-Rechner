@@ -10,9 +10,48 @@ const GesamtumsatzKcalOutput = document.getElementById(
   "Gesamtumsatz-kcal-output"
 );
 const GesamtumsatzKjOutput = document.getElementById("Gesamtumsatz-KJ-output");
-function calc(event) {
+const button = document.getElementById("submit-butt");
+
+// ================ Mit alter Schreibweise==============
+
+// function calc(event) {
+//   event.preventDefault();
+//   if (manlich.checked) {
+//     let resultKcalGrundKcal = (
+//       664.7 +
+//       13.7 * gewichtInput.value +
+//       5 * korperGroßeInput.value -
+//       (6, 8 * alterInput.value)
+//     ).toFixed(0);
+//     grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
+//     grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+//     let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
+//       0
+//     );
+//     GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
+//     GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
+//   } else if (weiblich.checked) {
+//     let resultKcalGrundKcal = (
+//       655.7 +
+//       9.6 * gewichtInput.value +
+//       1.8 * korperGroßeInput.value -
+//       4.7 * alterInput.value
+//     ).toFixed(0);
+//     grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
+//     grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+//     let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
+//       0
+//     );
+//     GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
+//     GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
+//   }
+// }
+
+// ==============addEventListener Methode=================
+
+button.addEventListener(`click`, (event) => {
   event.preventDefault();
-  if (manlich.checked && Number(activitat.value == 1)) {
+  if (manlich.checked) {
     let resultKcalGrundKcal = (
       664.7 +
       13.7 * gewichtInput.value +
@@ -21,70 +60,12 @@ function calc(event) {
     ).toFixed(0);
     grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
     grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 0.95).toFixed(0);
+    let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
+      0
+    );
     GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
     GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (manlich.checked && Number(activitat.value == 2)) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.2).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (manlich.checked && Number(activitat.value == 3)) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.5).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (manlich.checked && Number(activitat.value == 4)) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.7).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (manlich.checked && Number(activitat.value == 5)) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.9).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (manlich.checked && Number(activitat.value == 6)) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 2.2).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 1)) {
+  } else if (weiblich.checked) {
     let resultKcalGrundKcal = (
       655.7 +
       9.6 * gewichtInput.value +
@@ -93,68 +74,10 @@ function calc(event) {
     ).toFixed(0);
     grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
     grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 0.95).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 2)) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.2).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 3)) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.5).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 4)) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.7).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 5)) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 1.9).toFixed(0);
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked && Number(activitat.value == 6)) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * 2.2).toFixed(0);
+    let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
+      0
+    );
     GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
     GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
   }
-}
+});
