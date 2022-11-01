@@ -52,33 +52,66 @@ const fehlerMeldung = document.getElementById("input-fehler");
 
 button.addEventListener(`click`, (event) => {
   event.preventDefault();
-  if (manlich.checked) {
-    let resultKcalGrundKcal = (
-      664.7 +
-      13.7 * gewichtInput.value +
-      5 * korperGroßeInput.value -
-      (6, 8 * alterInput.value)
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
-      0
-    );
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
-  } else if (weiblich.checked) {
-    let resultKcalGrundKcal = (
-      655.7 +
-      9.6 * gewichtInput.value +
-      1.8 * korperGroßeInput.value -
-      4.7 * alterInput.value
-    ).toFixed(0);
-    grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-    grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
-    let resultKcalGesamtdKcal = (resultKcalGrundKcal * activitat.value).toFixed(
-      0
-    );
-    GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-    GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(0);
+  if (
+    korperGroßeInput.value !== "" &&
+    alterInput.value !== "" &&
+    gewichtInput.value !== ""
+  ) {
+    if (manlich.checked) {
+      let resultKcalGrundKcal = (
+        664.7 +
+        13.7 * gewichtInput.value +
+        5 * korperGroßeInput.value -
+        (6, 8 * alterInput.value)
+      ).toFixed(0);
+      grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
+      grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+      let resultKcalGesamtdKcal = (
+        resultKcalGrundKcal * activitat.value
+      ).toFixed(0);
+      GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
+      GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(
+        0
+      );
+    } else if (weiblich.checked) {
+      let resultKcalGrundKcal = (
+        655.7 +
+        9.6 * gewichtInput.value +
+        1.8 * korperGroßeInput.value -
+        4.7 * alterInput.value
+      ).toFixed(0);
+      grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
+      grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+      let resultKcalGesamtdKcal = (
+        resultKcalGrundKcal * activitat.value
+      ).toFixed(0);
+      GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
+      GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(
+        0
+      );
+    }
+  } else {
+    checkImpty(event);
   }
 });
+function checkImpty(event) {
+  event.preventDefault();
+  if (korperGroßeInput.value == "") {
+    korperGroßeInput.style.outline = `2px solid red`;
+  }
+  if (korperGroßeInput.value !== "") {
+    korperGroßeInput.style.outline = ``;
+  }
+  if (alterInput.value == "") {
+    alterInput.style.outline = `2px solid red`;
+  }
+  if (alterInput.value !== "") {
+    alterInput.style.outline = ``;
+  }
+  if (gewichtInput.value == "") {
+    gewichtInput.style.outline = `2px solid red`;
+  }
+  if (gewichtInput.value !== "") {
+    gewichtInput.style.outline = ``;
+  }
+}

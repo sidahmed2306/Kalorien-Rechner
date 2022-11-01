@@ -13,6 +13,7 @@
         <h1>kalorien rechner</h1>
         <label for="">Körpergrößer</label>
         <input
+          onchange="checkImpty(event)"
           class="input"
           type="number"
           name=""
@@ -20,9 +21,21 @@
           placeholder="in cm"
         />
         <label class="input" for="">Alter</label>
-        <input class="input" type="number" name="" id="Alter-input" />
+        <input
+          onchange="checkImpty(event)"
+          class="input"
+          type="number"
+          name=""
+          id="Alter-input"
+        />
         <label class="input" for="">Gewicht</label>
-        <input class="input" type="number" name="" id="Gewicht-input" />
+        <input
+          onchange="checkImpty(event)"
+          class="input"
+          type="number"
+          name=""
+          id="Gewicht-input"
+        />
         <div class="radio">
           <h2 class="h2-radio">Körperbau</h2>
           <div>
