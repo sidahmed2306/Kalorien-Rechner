@@ -8,16 +8,11 @@ html {
 }
 
 section {
-  background: linear-gradient(
-    #aec4dc 20%,
-    #91a3b8 40%,
-    #8799ad 60%,
-    #8799ad 100%
-  );
+  background: linear-gradient(#aec4dc 20%, #8799ad 100%);
   padding: 40px 30px 20px 20px;
   display: flex;
   flex-direction: column;
-  margin: 25% 35% 10% 35%;
+  margin: 5% 35% 10% 35%;
   gap: 15px;
   border-radius: 15px;
 }
@@ -67,15 +62,12 @@ label {
   border: none;
   align-self: flex-end;
   border-radius: 5px;
-  -webkit-border-radius: 5px;
-  -moz-border-radius: 5px;
-  -ms-border-radius: 5px;
-  -o-border-radius: 5px;
 }
 .button {
   align-self: flex-end;
 }
-table {
+input:active {
+  transform: translatex(-3px);
 }
 th {
   background-color: #2f79ab;
@@ -92,6 +84,7 @@ td {
   font-weight: bold;
 }
 p {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+  font-weight: bold;
   width: 100%;
 }

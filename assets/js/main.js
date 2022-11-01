@@ -11,6 +11,7 @@ const GesamtumsatzKcalOutput = document.getElementById(
 );
 const GesamtumsatzKjOutput = document.getElementById("Gesamtumsatz-KJ-output");
 const button = document.getElementById("submit-butt");
+const fehlerMeldung = document.getElementById("input-fehler");
 
 // ================ Mit alter Schreibweise==============
 
