@@ -7,7 +7,7 @@ html {
   font-size: 62.5%;
 }
 
-section {
+form {
   background: linear-gradient(#aec4dc 20%, #8799ad 100%);
   padding: 40px 30px 20px 20px;
   display: flex;
@@ -66,9 +66,9 @@ label {
 .button {
   align-self: flex-end;
 }
-input:active {
+/* input:active {
   transform: translatex(-3px);
-}
+} */
 th {
   background-color: #2f79ab;
   text-align: start;

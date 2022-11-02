@@ -9,24 +9,26 @@
   </head>
   <body>
     <main>
-      <section id="kalorien-rechner">
+      <form id="kalorien-rechner">
         <h1>kalorien rechner</h1>
         <label for="">Körpergrößer</label>
         <input
           onchange="checkImpty(event)"
           class="input"
           type="number"
-          name=""
+          name="2"
           id="Korpergrößer-input"
           placeholder="in cm"
+          required
         />
         <label class="input" for="">Alter</label>
         <input
           onchange="checkImpty(event)"
           class="input"
           type="number"
-          name=""
+          name="1"
           id="Alter-input"
+          required
         />
         <label class="input" for="">Gewicht</label>
         <input
@@ -35,6 +37,7 @@
           type="number"
           name=""
           id="Gewicht-input"
+          required
         />
         <div class="radio">
           <h2 class="h2-radio">Körperbau</h2>
@@ -65,7 +68,7 @@
           </option>
           <option value="2.2">Körperlich anstrengende berufliche Arbeit</option>
           <div class="button">
-            <input type="button" value="Submit" id="submit-butt" />
+            <input type="submit" value="Submit" id="submit-butt" />
           </div>
           <table id="table">
             <tr>
@@ -90,7 +93,7 @@
             Grundumsatz, falsche Zeiteinschätzung etc.
           </p>
         </select>
-      </section>
+      </form>
     </main>
     <script src="./assets/js/main.js"></script>
   </body>

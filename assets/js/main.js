@@ -12,6 +12,7 @@ const GesamtumsatzKcalOutput = document.getElementById(
 const GesamtumsatzKjOutput = document.getElementById("Gesamtumsatz-KJ-output");
 const button = document.getElementById("submit-butt");
 const fehlerMeldung = document.getElementById("input-fehler");
+const form = document.getElementById("kalorien-rechner");
 
 // ================ Mit alter Schreibweise==============
 
@@ -50,7 +51,7 @@ const fehlerMeldung = document.getElementById("input-fehler");
 
 // ==============addEventListener Methode=================
 
-button.addEventListener(`click`, (event) => {
+form.addEventListener(`submit`, (event) => {
   event.preventDefault();
   if (
     korperGroßeInput.value !== "" &&
@@ -64,15 +65,19 @@ button.addEventListener(`click`, (event) => {
         5 * korperGroßeInput.value -
         (6, 8 * alterInput.value)
       ).toFixed(0);
-      grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-      grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+      grundsumeKcalOutput.innerHTML =
+        Number(resultKcalGrundKcal).toLocaleString("de-DE");
+      grundkj = (resultKcalGrundKcal * 4.184).toFixed(0);
+      grundsumeKjOutput.innerHTML = Number(grundkj).toLocaleString("de-DE");
       let resultKcalGesamtdKcal = (
         resultKcalGrundKcal * activitat.value
       ).toFixed(0);
-      GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-      GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(
-        0
-      );
+      GesamtumsatzKcalOutput.innerHTML = Number(
+        resultKcalGesamtdKcal
+      ).toLocaleString("de-DE");
+      resultGesamtKj = (resultKcalGesamtdKcal * 4.184).toFixed(0);
+      GesamtumsatzKjOutput.innerHTML =
+        Number(resultGesamtKj).toLocaleString("de-DE");
     } else if (weiblich.checked) {
       let resultKcalGrundKcal = (
         655.7 +
@@ -80,15 +85,19 @@ button.addEventListener(`click`, (event) => {
         1.8 * korperGroßeInput.value -
         4.7 * alterInput.value
       ).toFixed(0);
-      grundsumeKcalOutput.innerHTML = resultKcalGrundKcal;
-      grundsumeKjOutput.innerHTML = (resultKcalGrundKcal * 4.184).toFixed(0);
+      grundsumeKcalOutput.innerHTML =
+        Number(resultKcalGrundKcal).toLocaleString("de-DE");
+      grundKjFrau = (resultKcalGrundKcal * 4.184).toFixed(0);
+      grundsumeKjOutput.innerHTML = Number(grundKjFrau).toLocaleString("de-DE");
       let resultKcalGesamtdKcal = (
         resultKcalGrundKcal * activitat.value
       ).toFixed(0);
-      GesamtumsatzKcalOutput.innerHTML = resultKcalGesamtdKcal;
-      GesamtumsatzKjOutput.innerHTML = (resultKcalGesamtdKcal * 4.184).toFixed(
-        0
-      );
+      GesamtumsatzKcalOutput.innerHTML = Number(
+        resultKcalGesamtdKcal
+      ).toLocaleString("de-DE");
+      gesamtKjFrau = (resultKcalGesamtdKcal * 4.184).toFixed(0);
+      GesamtumsatzKjOutput.innerHTML =
+        Number(gesamtKjFrau).toLocaleString("de-DE");
     }
   } else {
     checkImpty(event);
